@@ -12,6 +12,7 @@ namespace StarterAssets
 		public Vector2 look;
 		public bool jump;
 		public bool sprint;
+        public bool TransformPlayer;
         public bool aim;
         public bool EvadeLeft;
         public bool EvadeRight;
@@ -50,11 +51,15 @@ namespace StarterAssets
 		{
 			SprintInput(value.isPressed);
 		}
-
-        //AIM
+        //transform
         public void OnAim(InputValue value)
         {
             AimInput(value.isPressed);
+        }
+        //AIM
+        public void OnTransformPlayer(InputValue value)
+        {
+            TransformPlayerInput(value.isPressed);
         }
         //combat
         public void OnHit(InputValue value)
@@ -101,7 +106,11 @@ namespace StarterAssets
 		{
 			sprint = newSprintState;
 		}
-
+        //transform
+        public void TransformPlayerInput(bool newTransformPlayer)
+        {
+            TransformPlayer = newTransformPlayer;
+        }
         //AIM
         public void AimInput(bool newAimState)
         {

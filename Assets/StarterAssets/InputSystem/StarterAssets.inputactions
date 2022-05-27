@@ -103,6 +103,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "TransformPlayer",
+                    "type": "Button",
+                    "id": "ba18dffe-8bdf-4a42-ac23-beabcb4fc89f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -389,6 +398,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "ScrollWheel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3de9479b-c8c9-45b0-a993-e517d1f3434f",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "TransformPlayer",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

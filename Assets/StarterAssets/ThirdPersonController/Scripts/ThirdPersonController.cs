@@ -15,6 +15,12 @@ namespace StarterAssets
     public class ThirdPersonController : MonoBehaviour
     {
         [Header("Player")]
+        [SerializeField] private GameObject OniBody;
+        [SerializeField] private GameObject HumanBody;
+        [SerializeField] private Avatar Oni;
+        [SerializeField] private Avatar Human;
+        [SerializeField] private bool OniMode;
+
         [Tooltip("Move speed of the character in m/s")]
         public float MoveSpeed = 2.0f;
 
@@ -155,7 +161,7 @@ namespace StarterAssets
         private void Start()
         {
             _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
-            
+
             _hasAnimator = TryGetComponent(out _animator);
             _controller = GetComponent<CharacterController>();
             _input = GetComponent<StarterAssetsInputs>();
@@ -185,9 +191,9 @@ namespace StarterAssets
                 KatanaInHandOn();
                 KatanaOff();
             }
-
             HitParticle.Stop();
-
+           OniModeController();  
+            
         }
 
         private void Update()
@@ -197,6 +203,21 @@ namespace StarterAssets
 
             JumpAndGravity();
             GroundedCheck();
+
+            if (_input.TransformPlayer && Grounded)
+            {
+                if (!OniMode)
+                {
+                    OniMode = true;
+                }
+                else
+                {
+                    OniMode = false;
+                }
+                _input.TransformPlayer = false;
+                OniModeController();
+            }
+            
 
             if (!attack && moveActive)
             {
@@ -221,6 +242,8 @@ namespace StarterAssets
                     _input.combatMode = false;
                 }
             }
+            //Transform player
+            
             //combos hits left click
             if (_input.Hit && Grounded && Combat)
             {
@@ -496,6 +519,27 @@ namespace StarterAssets
             if (animationEvent.animatorClipInfo.weight > 0.5f)
             {
                 AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
+            }
+        }
+
+
+        private void OniModeController()
+        {
+            if (OniMode)
+            {
+                _animator.enabled = false;
+                OniBody.SetActive(true);
+                HumanBody.SetActive(false);
+                _animator.avatar = Oni;
+                _animator.enabled = true;              
+            }
+            else
+            {
+                _animator.enabled = false;
+                OniBody.SetActive(false);
+                HumanBody.SetActive(true);
+                _animator.avatar = Human;
+                _animator.enabled = true;
             }
         }
 
