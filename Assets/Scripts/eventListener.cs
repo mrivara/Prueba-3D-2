@@ -69,6 +69,14 @@ public class eventListener : MonoBehaviour
     {
         _mngrAttack.moveOff();
     }
+    public void AnimMoveOn2()
+    {
+        _mngrAttack.moveOn2();
+    }
+    public void AnimMoveOff2()
+    {
+        _mngrAttack.moveOff2();
+    }
 
     public void AnimKatanaCombatOn()
     {

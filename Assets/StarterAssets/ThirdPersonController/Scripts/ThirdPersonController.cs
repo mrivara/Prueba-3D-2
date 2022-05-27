@@ -201,7 +201,7 @@ namespace StarterAssets
             if (!attack && moveActive)
             {
                 Move();
-            }     
+            }
             
             Evade();
             _animator.SetBool(_animIDCombat, Combat);
@@ -217,6 +217,7 @@ namespace StarterAssets
                 else
                 {
                     Combat = false;
+                    attack = false;
                     _input.combatMode = false;
                 }
             }
@@ -662,8 +663,22 @@ namespace StarterAssets
             attack = true;
             moveActive = false;
         }
+        public void moveOn2()
+        {
+            moveActive = true;
+            //attack = false;
+        }
+        public void moveOff2()
+        {
+            if (!Combat)
+            {
+                moveActive = false;
+                //attack = true;
+            }
 
-    public void KatanaOn()
+        }
+
+        public void KatanaOn()
         {
             KatanaScabbard.SetActive(true);
         }
