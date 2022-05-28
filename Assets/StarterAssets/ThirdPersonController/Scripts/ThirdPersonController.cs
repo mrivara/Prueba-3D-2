@@ -20,6 +20,7 @@ namespace StarterAssets
         [SerializeField] private Avatar Oni;
         [SerializeField] private Avatar Human;
         [SerializeField] private bool OniMode;
+        [SerializeField] private ParticleSystem TransformParticle, TransformParticle2, TransformParticle3;
 
         [Tooltip("Move speed of the character in m/s")]
         public float MoveSpeed = 2.0f;
@@ -192,6 +193,9 @@ namespace StarterAssets
                 KatanaOff();
             }
             HitParticle.Stop();
+            TransformParticle.Stop();
+            TransformParticle2.Stop();
+            TransformParticle3.Stop();
            OniModeController();  
             
         }
@@ -206,6 +210,9 @@ namespace StarterAssets
 
             if (_input.TransformPlayer && Grounded)
             {
+                TransformParticle.Play();
+                TransformParticle2.Play();
+                TransformParticle3.Play();
                 if (!OniMode)
                 {
                     OniMode = true;
@@ -213,11 +220,13 @@ namespace StarterAssets
                 else
                 {
                     OniMode = false;
-                }
+                }              
                 _input.TransformPlayer = false;
-                OniModeController();
+                //OniModeController();
+                Invoke("OniModeController", 0.85f);
+                //Invoke("SayHello", 2.5f);
             }
-            
+
 
             if (!attack && moveActive)
             {
