@@ -47,6 +47,10 @@ namespace StarterAssets
         //hit
         [SerializeField] private GameObject KatanaFree;
         [SerializeField] private GameObject KatanaScabbard;
+        [SerializeField] private GameObject KatanaFreeH;
+        [SerializeField] private GameObject KatanaScabbardH;
+        [SerializeField] private GameObject KatanaFreeO;
+        [SerializeField] private GameObject KatanaScabbardO;
         [SerializeField] private bool moveActive;
         [SerializeField] private bool attack;
         [SerializeField] private int CountAttackClick;
@@ -182,6 +186,8 @@ namespace StarterAssets
             CountAttackClick = 0;
             moveActive = true;
             attack = false;
+            KatanaController();
+            OniModeController();
             if (!Combat)
             {
                 KatanaInHandOff();
@@ -195,9 +201,7 @@ namespace StarterAssets
             HitParticle.Stop();
             TransformParticle.Stop();
             TransformParticle2.Stop();
-            TransformParticle3.Stop();
-           OniModeController();  
-            
+            TransformParticle3.Stop();            
         }
 
         private void Update()
@@ -207,35 +211,6 @@ namespace StarterAssets
 
             JumpAndGravity();
             GroundedCheck();
-
-            if (_input.TransformPlayer && Grounded)
-            {
-                TransformParticle.Play();
-                TransformParticle2.Play();
-                TransformParticle3.Play();
-                if (!OniMode)
-                {
-                    OniMode = true;
-                }
-                else
-                {
-                    OniMode = false;
-                }              
-                _input.TransformPlayer = false;
-                //OniModeController();
-                Invoke("OniModeController", 0.85f);
-                //Invoke("SayHello", 2.5f);
-            }
-
-
-            if (!attack && moveActive)
-            {
-                Move();
-            }
-            
-            Evade();
-            _animator.SetBool(_animIDCombat, Combat);
-      
             //change modo: normal <--> combat
             if (_input.combatMode)
             {
@@ -251,6 +226,35 @@ namespace StarterAssets
                     _input.combatMode = false;
                 }
             }
+            //transform player to Oni <--> humano
+            if (_input.TransformPlayer && Grounded)
+            {
+                TransformParticle.Play();
+                TransformParticle2.Play();
+                TransformParticle3.Play();
+                if (!OniMode)
+                {
+                    OniMode = true;
+                }
+                else
+                {
+                    OniMode = false;
+                }              
+                _input.TransformPlayer = false;
+                KatanaController();
+                //OniModeController();
+                Invoke("OniModeController", 0.85f);
+                //Invoke("SayHello", 2.5f);
+            }
+
+            if (!attack && moveActive)
+            {
+                Move();
+            }
+            
+            Evade();
+            _animator.SetBool(_animIDCombat, Combat);
+      
             //Transform player
             
             //combos hits left click
@@ -531,11 +535,24 @@ namespace StarterAssets
             }
         }
 
+        private void KatanaController()
+        {
+            if (OniMode)
+            {
+                KatanaFree = KatanaFreeO;
+                KatanaScabbard = KatanaScabbardO;
+            }
+            else if(!OniMode)
+            {
+                KatanaFree = KatanaFreeH;
+                KatanaScabbard = KatanaScabbardH;
+            }
+        }
 
         private void OniModeController()
         {
             if (OniMode)
-            {
+            {              
                 _animator.enabled = false;
                 OniBody.SetActive(true);
                 HumanBody.SetActive(false);
@@ -543,7 +560,7 @@ namespace StarterAssets
                 _animator.enabled = true;              
             }
             else
-            {
+            {  
                 _animator.enabled = false;
                 OniBody.SetActive(false);
                 HumanBody.SetActive(true);
