@@ -241,10 +241,16 @@ namespace StarterAssets
                     OniMode = false;
                 }              
                 _input.TransformPlayer = false;
-                KatanaController();
-                //OniModeController();
+                //_animator.SetBool("TransformCombat", true);
                 Invoke("OniModeController", 0.85f);
-                //Invoke("SayHello", 2.5f);
+
+                KatanaController();
+                if(!Combat)
+                {
+                    KatanaFree.SetActive(false);
+                    KatanaScabbard.SetActive(true);
+                }
+                
             }
 
             if (!attack && moveActive)
@@ -535,6 +541,7 @@ namespace StarterAssets
             }
         }
 
+        //control de katana 
         private void KatanaController()
         {
             if (OniMode)
@@ -542,7 +549,7 @@ namespace StarterAssets
                 KatanaFree = KatanaFreeO;
                 KatanaScabbard = KatanaScabbardO;
             }
-            else if(!OniMode)
+            else if (!OniMode)
             {
                 KatanaFree = KatanaFreeH;
                 KatanaScabbard = KatanaScabbardH;
@@ -552,12 +559,21 @@ namespace StarterAssets
         private void OniModeController()
         {
             if (OniMode)
-            {              
+            {
                 _animator.enabled = false;
                 OniBody.SetActive(true);
                 HumanBody.SetActive(false);
                 _animator.avatar = Oni;
-                _animator.enabled = true;              
+                _animator.enabled = true;
+                if (Combat)
+                {
+                    _animator.SetBool("TransformCombat", true);
+                    KatanaFree.SetActive(true);
+                }
+                else
+                {
+                    _animator.SetBool("TransformCombat", false);
+                }
             }
             else
             {  
@@ -566,6 +582,15 @@ namespace StarterAssets
                 HumanBody.SetActive(true);
                 _animator.avatar = Human;
                 _animator.enabled = true;
+                if (Combat)
+                {
+                    _animator.SetBool("TransformCombat", true);
+                    KatanaFree.SetActive(true);
+                }
+                else
+                {
+                    _animator.SetBool("TransformCombat", false);
+                }
             }
         }
 
