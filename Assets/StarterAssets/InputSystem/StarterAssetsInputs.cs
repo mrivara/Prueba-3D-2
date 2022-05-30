@@ -20,6 +20,7 @@ namespace StarterAssets
         public bool combatMode;
         public bool HitHeavy;
         public bool Hit;
+        public bool Guard;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -83,6 +84,10 @@ namespace StarterAssets
         {
             EvadeRightInput(value.isPressed);
         }
+        public void OnGuard(InputValue value)
+        {
+            GuardInput(value.isPressed);
+        }
 
 #endif
 
@@ -138,7 +143,10 @@ namespace StarterAssets
         {
             EvadeRight = newEvadeRightState;
         }
-
+        public void GuardInput(bool newGuardState)
+        {
+            Guard = newGuardState;
+        }
 
         //
         private void OnApplicationFocus(bool hasFocus)

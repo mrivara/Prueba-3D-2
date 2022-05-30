@@ -211,6 +211,7 @@ namespace StarterAssets
 
             JumpAndGravity();
             GroundedCheck();
+            //GuardMode();
             //change modo: normal <--> combat
             if (_input.combatMode)
             {
@@ -283,10 +284,19 @@ namespace StarterAssets
                 _input.Hit = false;
                 CountAttackClick = 0;
             }
-
             if (CountAttackClick >=16)
             {
                 ResetAttackPhase();
+            }
+
+            if (_input.Guard && Combat)
+            {
+                moveOff();
+                _animator.SetBool("GuardOn", true);
+            }
+            else if (!_input.Guard)
+            {             
+                _animator.SetBool("GuardOn", false);
             }
             //movement in combat mode 
             if (moveAttack)
@@ -611,11 +621,11 @@ namespace StarterAssets
 
         //private void GuardMode()
         //{
-        //    if (_input.guard && Combat)
+        //    if (_input.Guard && Combat)
         //    {
         //        _animator.SetBool("GuardOn", true);
         //    }
-        //    else if (!_input.guard)
+        //    else if (!_input.Guard)
         //    {
         //        moveOn();
         //        _animator.SetBool("GuardOn", false);
