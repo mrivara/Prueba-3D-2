@@ -1146,7 +1146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8345070699079395522, guid: 09aade0ecefd01e4b8f7661acf64f5c2, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8345070699079395522, guid: 09aade0ecefd01e4b8f7661acf64f5c2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2970,7 +2970,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &619035724
 PrefabInstance:
@@ -3223,7 +3223,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 8f8e3d4367ae0e44a8329083a4592719, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8f8e3d4367ae0e44a8329083a4592719, type: 3}
       propertyPath: m_LocalScale.x
@@ -4316,7 +4316,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c71c9dcd013fa0f4eac4098ae5cabfdd, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c71c9dcd013fa0f4eac4098ae5cabfdd, type: 3}
       propertyPath: m_LocalScale.x
@@ -6971,6 +6971,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2119775929799088782}
     m_Modifications:
+    - target: {fileID: 3372053820906789300, guid: 6d6282bb13954274f9c8616161e1d00a, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: d9f287519c6d903498e20bfda9d9c42b, type: 3}
     - target: {fileID: 4259305276671615207, guid: 6d6282bb13954274f9c8616161e1d00a, type: 3}
       propertyPath: aimVirtualCamera
       value: 
