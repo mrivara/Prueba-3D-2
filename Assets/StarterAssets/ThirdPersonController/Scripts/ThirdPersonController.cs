@@ -251,6 +251,11 @@ namespace StarterAssets
                     KatanaFree.SetActive(false);
                     KatanaScabbard.SetActive(true);
                 }
+                else if (Combat)
+                {
+                    KatanaFree.SetActive(true);
+                    KatanaScabbard.SetActive(false);
+                }
                 
             }
 
