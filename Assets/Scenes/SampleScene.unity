@@ -2252,6 +2252,7 @@ GameObject:
   - component: {fileID: 355378312}
   - component: {fileID: 355378311}
   - component: {fileID: 355378310}
+  - component: {fileID: 355378314}
   m_Layer: 0
   m_Name: Enemy2
   m_TagString: Player
@@ -2319,7 +2320,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 355378309}
-  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: -0.9929138, z: 0, w: 0.11883721}
   m_LocalPosition: {x: 4.95, y: 3.118, z: 14.094}
   m_LocalScale: {x: 0.5799998, y: 0.5799998, z: 0.5799998}
   m_Children:
@@ -2335,7 +2336,19 @@ Transform:
   - {fileID: 2124910199}
   m_Father: {fileID: 0}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -166.35, z: 0}
+--- !u!114 &355378314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355378309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0673ff0c1f98214d8c72dfbea8b7155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &374614358
 GameObject:
   m_ObjectHideFlags: 0
@@ -47484,6 +47497,7 @@ MonoBehaviour:
   BottomClamp: -30
   CameraAngleOverride: 0
   LockCameraPosition: 0
+  _enemyController: {fileID: 355378314}
 --- !u!143 &6768220070378722209
 CharacterController:
   m_ObjectHideFlags: 0
