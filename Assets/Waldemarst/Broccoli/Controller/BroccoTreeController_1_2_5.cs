@@ -77,11 +77,11 @@ namespace Broccoli.Controller {
 			Best,
 			Palm
 		}
-		public WindQuality windQuality = WindQuality.Palm;
+		public WindQuality windQuality = WindQuality.Better;
 		private float baseWindAmplitude = 0.2752f;
 		public float localWindAmplitude = 1f;
 		public static float globalWindAmplitude = 1f;
-		public float windMain = 0.2f;
+		public float windMain = 0f;
 		#endregion
 
 		#region Shader values
