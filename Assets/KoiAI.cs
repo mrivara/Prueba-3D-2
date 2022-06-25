@@ -31,6 +31,7 @@ public class KoiAI : MonoBehaviour
     {
         target = waypoints[waypointIndex].position;
         agent.SetDestination(target);
+        
     }
 
     void IterateWaypointIndex()
