@@ -130,6 +130,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112879582}
     m_Modifications:
+    - target: {fileID: 80446330772692360, guid: 23af1a39b0c5720b898eb5eefad5a1b7, type: 3}
+      propertyPath: windMain
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 80446330772692360, guid: 23af1a39b0c5720b898eb5eefad5a1b7, type: 3}
+      propertyPath: windQuality
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 80446330772692360, guid: 23af1a39b0c5720b898eb5eefad5a1b7, type: 3}
+      propertyPath: localWindAmplitude
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 303285738808954427, guid: 23af1a39b0c5720b898eb5eefad5a1b7, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -177,6 +189,18 @@ PrefabInstance:
     - target: {fileID: 3446369726517427768, guid: 23af1a39b0c5720b898eb5eefad5a1b7, type: 3}
       propertyPath: m_AnimateCrossFading
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3888244981782694099, guid: 23af1a39b0c5720b898eb5eefad5a1b7, type: 3}
+      propertyPath: windMain
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3888244981782694099, guid: 23af1a39b0c5720b898eb5eefad5a1b7, type: 3}
+      propertyPath: windQuality
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3888244981782694099, guid: 23af1a39b0c5720b898eb5eefad5a1b7, type: 3}
+      propertyPath: localWindAmplitude
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 7987437740116969698, guid: 23af1a39b0c5720b898eb5eefad5a1b7, type: 3}
       propertyPath: m_Name
@@ -1710,6 +1734,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112879582}
     m_Modifications:
+    - target: {fileID: 261369279521303221, guid: 488c1b23b5470bb4986ad7d362420766, type: 3}
+      propertyPath: windMain
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 261369279521303221, guid: 488c1b23b5470bb4986ad7d362420766, type: 3}
+      propertyPath: windQuality
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2845441303590335136, guid: 488c1b23b5470bb4986ad7d362420766, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1762,6 +1794,14 @@ PrefabInstance:
       propertyPath: m_AnimateCrossFading
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7889829262004248756, guid: 488c1b23b5470bb4986ad7d362420766, type: 3}
+      propertyPath: windMain
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7889829262004248756, guid: 488c1b23b5470bb4986ad7d362420766, type: 3}
+      propertyPath: windQuality
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 488c1b23b5470bb4986ad7d362420766, type: 3}
 --- !u!4 &244843068 stripped
@@ -1776,6 +1816,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112879582}
     m_Modifications:
+    - target: {fileID: 2319464007058678408, guid: 18ea0683a7392d274905c95e8ec4544b, type: 3}
+      propertyPath: windMain
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2319464007058678408, guid: 18ea0683a7392d274905c95e8ec4544b, type: 3}
+      propertyPath: windQuality
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2319464007058678408, guid: 18ea0683a7392d274905c95e8ec4544b, type: 3}
+      propertyPath: localWindAmplitude
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 3361794247648481284, guid: 18ea0683a7392d274905c95e8ec4544b, type: 3}
       propertyPath: m_Name
       value: BlackPineTree_D (1)
@@ -1783,6 +1835,18 @@ PrefabInstance:
     - target: {fileID: 4642500087534988878, guid: 18ea0683a7392d274905c95e8ec4544b, type: 3}
       propertyPath: m_AnimateCrossFading
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7077305321238043767, guid: 18ea0683a7392d274905c95e8ec4544b, type: 3}
+      propertyPath: windMain
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7077305321238043767, guid: 18ea0683a7392d274905c95e8ec4544b, type: 3}
+      propertyPath: windQuality
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7077305321238043767, guid: 18ea0683a7392d274905c95e8ec4544b, type: 3}
+      propertyPath: localWindAmplitude
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 8469781390584255956, guid: 18ea0683a7392d274905c95e8ec4544b, type: 3}
       propertyPath: m_RootOrder
@@ -2556,6 +2620,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112879582}
     m_Modifications:
+    - target: {fileID: 80446330772692360, guid: 23af1a39b0c5720b898eb5eefad5a1b7, type: 3}
+      propertyPath: windMain
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 80446330772692360, guid: 23af1a39b0c5720b898eb5eefad5a1b7, type: 3}
+      propertyPath: windQuality
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 80446330772692360, guid: 23af1a39b0c5720b898eb5eefad5a1b7, type: 3}
+      propertyPath: localWindAmplitude
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 303285738808954427, guid: 23af1a39b0c5720b898eb5eefad5a1b7, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -2603,6 +2679,18 @@ PrefabInstance:
     - target: {fileID: 3446369726517427768, guid: 23af1a39b0c5720b898eb5eefad5a1b7, type: 3}
       propertyPath: m_AnimateCrossFading
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3888244981782694099, guid: 23af1a39b0c5720b898eb5eefad5a1b7, type: 3}
+      propertyPath: windMain
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3888244981782694099, guid: 23af1a39b0c5720b898eb5eefad5a1b7, type: 3}
+      propertyPath: windQuality
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3888244981782694099, guid: 23af1a39b0c5720b898eb5eefad5a1b7, type: 3}
+      propertyPath: localWindAmplitude
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 7987437740116969698, guid: 23af1a39b0c5720b898eb5eefad5a1b7, type: 3}
       propertyPath: m_Name
@@ -7083,6 +7171,18 @@ PrefabInstance:
       propertyPath: m_AnimateCrossFading
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 740925426697011704, guid: 411d79dbbe4633332bf08419508ecdd1, type: 3}
+      propertyPath: windMain
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 740925426697011704, guid: 411d79dbbe4633332bf08419508ecdd1, type: 3}
+      propertyPath: windQuality
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 740925426697011704, guid: 411d79dbbe4633332bf08419508ecdd1, type: 3}
+      propertyPath: localWindAmplitude
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 1405983033647363507, guid: 411d79dbbe4633332bf08419508ecdd1, type: 3}
       propertyPath: m_Name
       value: BlackPineTree_A
@@ -7130,6 +7230,18 @@ PrefabInstance:
     - target: {fileID: 1808271603589002604, guid: 411d79dbbe4633332bf08419508ecdd1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8841707484596294913, guid: 411d79dbbe4633332bf08419508ecdd1, type: 3}
+      propertyPath: windMain
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8841707484596294913, guid: 411d79dbbe4633332bf08419508ecdd1, type: 3}
+      propertyPath: windQuality
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8841707484596294913, guid: 411d79dbbe4633332bf08419508ecdd1, type: 3}
+      propertyPath: localWindAmplitude
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 411d79dbbe4633332bf08419508ecdd1, type: 3}
@@ -15038,6 +15150,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -21.481
       objectReference: {fileID: 0}
+    - target: {fileID: 1175405400329054023, guid: 783170933d5c442f2a2ab32f0fb0502a, type: 3}
+      propertyPath: windMain
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1175405400329054023, guid: 783170933d5c442f2a2ab32f0fb0502a, type: 3}
+      propertyPath: windQuality
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1175405400329054023, guid: 783170933d5c442f2a2ab32f0fb0502a, type: 3}
+      propertyPath: localWindAmplitude
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1562508056145668065, guid: 783170933d5c442f2a2ab32f0fb0502a, type: 3}
+      propertyPath: windMain
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1562508056145668065, guid: 783170933d5c442f2a2ab32f0fb0502a, type: 3}
+      propertyPath: windQuality
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1562508056145668065, guid: 783170933d5c442f2a2ab32f0fb0502a, type: 3}
+      propertyPath: localWindAmplitude
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 3887799498446393491, guid: 783170933d5c442f2a2ab32f0fb0502a, type: 3}
       propertyPath: m_AnimateCrossFading
       value: 0
@@ -15966,6 +16102,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112879582}
     m_Modifications:
+    - target: {fileID: 2177931028317934514, guid: 9d642dd3a2ff904da90e9417ae5cddec, type: 3}
+      propertyPath: windMain
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2177931028317934514, guid: 9d642dd3a2ff904da90e9417ae5cddec, type: 3}
+      propertyPath: windQuality
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4936680397356055064, guid: 9d642dd3a2ff904da90e9417ae5cddec, type: 3}
       propertyPath: m_Name
       value: SakuraTree_F
@@ -16013,6 +16157,14 @@ PrefabInstance:
     - target: {fileID: 5752105476961817693, guid: 9d642dd3a2ff904da90e9417ae5cddec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7462068436122204213, guid: 9d642dd3a2ff904da90e9417ae5cddec, type: 3}
+      propertyPath: windMain
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7462068436122204213, guid: 9d642dd3a2ff904da90e9417ae5cddec, type: 3}
+      propertyPath: windQuality
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8976102599066158350, guid: 9d642dd3a2ff904da90e9417ae5cddec, type: 3}
       propertyPath: m_AnimateCrossFading
@@ -16245,6 +16397,14 @@ PrefabInstance:
       propertyPath: m_ScaleInLightmap
       value: 1.2
       objectReference: {fileID: 0}
+    - target: {fileID: 6372923079235690614, guid: 9aaafd7584909db6aae1b9e564dc5ef3, type: 3}
+      propertyPath: windMain
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372923079235690614, guid: 9aaafd7584909db6aae1b9e564dc5ef3, type: 3}
+      propertyPath: windQuality
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7466445072313495837, guid: 9aaafd7584909db6aae1b9e564dc5ef3, type: 3}
       propertyPath: m_Name
       value: JapaneseMapleTree_B
@@ -16252,6 +16412,14 @@ PrefabInstance:
     - target: {fileID: 7970241100903537895, guid: 9aaafd7584909db6aae1b9e564dc5ef3, type: 3}
       propertyPath: m_ScaleInLightmap
       value: 0.8000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590225121535241673, guid: 9aaafd7584909db6aae1b9e564dc5ef3, type: 3}
+      propertyPath: windMain
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590225121535241673, guid: 9aaafd7584909db6aae1b9e564dc5ef3, type: 3}
+      propertyPath: windQuality
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9aaafd7584909db6aae1b9e564dc5ef3, type: 3}
@@ -38913,6 +39081,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112879582}
     m_Modifications:
+    - target: {fileID: 1208208930919553545, guid: eba8e66cbe98e874f97ecf77638129b2, type: 3}
+      propertyPath: windMain
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208208930919553545, guid: eba8e66cbe98e874f97ecf77638129b2, type: 3}
+      propertyPath: windQuality
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2842956978540125714, guid: eba8e66cbe98e874f97ecf77638129b2, type: 3}
       propertyPath: m_AnimateCrossFading
       value: 0
@@ -38964,6 +39140,14 @@ PrefabInstance:
     - target: {fileID: 4696918893124759687, guid: eba8e66cbe98e874f97ecf77638129b2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010074679545530515, guid: eba8e66cbe98e874f97ecf77638129b2, type: 3}
+      propertyPath: windMain
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010074679545530515, guid: eba8e66cbe98e874f97ecf77638129b2, type: 3}
+      propertyPath: windQuality
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eba8e66cbe98e874f97ecf77638129b2, type: 3}
@@ -44450,6 +44634,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112879582}
     m_Modifications:
+    - target: {fileID: 80446330772692360, guid: 23af1a39b0c5720b898eb5eefad5a1b7, type: 3}
+      propertyPath: windMain
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 80446330772692360, guid: 23af1a39b0c5720b898eb5eefad5a1b7, type: 3}
+      propertyPath: windQuality
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 80446330772692360, guid: 23af1a39b0c5720b898eb5eefad5a1b7, type: 3}
+      propertyPath: localWindAmplitude
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 303285738808954427, guid: 23af1a39b0c5720b898eb5eefad5a1b7, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -44497,6 +44693,18 @@ PrefabInstance:
     - target: {fileID: 3446369726517427768, guid: 23af1a39b0c5720b898eb5eefad5a1b7, type: 3}
       propertyPath: m_AnimateCrossFading
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3888244981782694099, guid: 23af1a39b0c5720b898eb5eefad5a1b7, type: 3}
+      propertyPath: windMain
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3888244981782694099, guid: 23af1a39b0c5720b898eb5eefad5a1b7, type: 3}
+      propertyPath: windQuality
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3888244981782694099, guid: 23af1a39b0c5720b898eb5eefad5a1b7, type: 3}
+      propertyPath: localWindAmplitude
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 7987437740116969698, guid: 23af1a39b0c5720b898eb5eefad5a1b7, type: 3}
       propertyPath: m_Name
@@ -46400,6 +46608,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112879582}
     m_Modifications:
+    - target: {fileID: 2319464007058678408, guid: 18ea0683a7392d274905c95e8ec4544b, type: 3}
+      propertyPath: windMain
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2319464007058678408, guid: 18ea0683a7392d274905c95e8ec4544b, type: 3}
+      propertyPath: windQuality
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2319464007058678408, guid: 18ea0683a7392d274905c95e8ec4544b, type: 3}
+      propertyPath: localWindAmplitude
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 3361794247648481284, guid: 18ea0683a7392d274905c95e8ec4544b, type: 3}
       propertyPath: m_Name
       value: BlackPineTree_D
@@ -46407,6 +46627,18 @@ PrefabInstance:
     - target: {fileID: 4642500087534988878, guid: 18ea0683a7392d274905c95e8ec4544b, type: 3}
       propertyPath: m_AnimateCrossFading
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7077305321238043767, guid: 18ea0683a7392d274905c95e8ec4544b, type: 3}
+      propertyPath: windMain
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7077305321238043767, guid: 18ea0683a7392d274905c95e8ec4544b, type: 3}
+      propertyPath: windQuality
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7077305321238043767, guid: 18ea0683a7392d274905c95e8ec4544b, type: 3}
+      propertyPath: localWindAmplitude
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 8469781390584255956, guid: 18ea0683a7392d274905c95e8ec4544b, type: 3}
       propertyPath: m_RootOrder
@@ -62403,6 +62635,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112879582}
     m_Modifications:
+    - target: {fileID: 1265186053359083928, guid: 6a8478d973ae3ac75a084871ef5cbffb, type: 3}
+      propertyPath: localWindAmplitude
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2791588800745653183, guid: 6a8478d973ae3ac75a084871ef5cbffb, type: 3}
+      propertyPath: localWindAmplitude
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5599524240329635455, guid: 6a8478d973ae3ac75a084871ef5cbffb, type: 3}
       propertyPath: m_AnimateCrossFading
       value: 0
@@ -64046,6 +64286,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SakuraTree_D
       objectReference: {fileID: 0}
+    - target: {fileID: 4369753264221374083, guid: 261441bc3708ec7aa8a2c288c3fab3ef, type: 3}
+      propertyPath: windMain
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4369753264221374083, guid: 261441bc3708ec7aa8a2c288c3fab3ef, type: 3}
+      propertyPath: windQuality
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5483039503417428075, guid: 261441bc3708ec7aa8a2c288c3fab3ef, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -64089,6 +64337,14 @@ PrefabInstance:
     - target: {fileID: 5483039503417428075, guid: 261441bc3708ec7aa8a2c288c3fab3ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6818519271388622955, guid: 261441bc3708ec7aa8a2c288c3fab3ef, type: 3}
+      propertyPath: windMain
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6818519271388622955, guid: 261441bc3708ec7aa8a2c288c3fab3ef, type: 3}
+      propertyPath: windQuality
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 261441bc3708ec7aa8a2c288c3fab3ef, type: 3}
@@ -64270,6 +64526,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112879582}
     m_Modifications:
+    - target: {fileID: 1265186053359083928, guid: 6a8478d973ae3ac75a084871ef5cbffb, type: 3}
+      propertyPath: localWindAmplitude
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2791588800745653183, guid: 6a8478d973ae3ac75a084871ef5cbffb, type: 3}
+      propertyPath: localWindAmplitude
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5599524240329635455, guid: 6a8478d973ae3ac75a084871ef5cbffb, type: 3}
       propertyPath: m_AnimateCrossFading
       value: 0

@@ -4,129 +4,154 @@ using UnityEditor;
 #endif
 
 namespace Broccoli.Controller {
-	/// <summary>
-	/// Controls a Tree Broccoli Instances.
-	/// </summary>
-	[ExecuteInEditMode]
-	public class BroccoTreeController_1_2_5 : MonoBehaviour {
-		#region Vars
-		/// <summary>
-		/// Version of Broccoli Tree Creator issuing this controller.
-		/// </summary>
-		public string version = "";
-		/// <summary>
-		/// Type of shaders available.
-		/// </summary>
-		public enum ShaderType {
-			Standard,
-			TreeCreatorOrCompatible,
-			SpeedTree7OrCompatible,
-			SpeedTree8OrCompatible,
-			Billboard
-		}
-		/// <summary>
-		/// Type of shader used to process this instance.
-		/// </summary>
-		public ShaderType shaderType = ShaderType.Standard;
-		/// <summary>
-		/// True if this instance has wind data based on SpeedTree.
-		/// </summary>
-		private bool hasSpeedTreeWind { 
-			get { return shaderType == ShaderType.SpeedTree7OrCompatible || shaderType == ShaderType.SpeedTree8OrCompatible; } 
-		}
-		/// <summary>
-		/// True if this instance has wind data based on Unity Tree Creator.
-		/// </summary>
-		private bool hasTreeCreatorWind {
-			get { return shaderType == ShaderType.TreeCreatorOrCompatible; }
-		}
-		/// <summary>
-		/// True to preview wind on the editor at all times.
-		/// </summary>
-		[HideInInspector]
-		public bool editorWindAlways = false;
-		/// <summary>
-		/// The renderer of the tree.
-		/// </summary>
-		Renderer _renderer;
-		/// <summary>
-		/// Material property block to set shader values.
-		/// </summary>
-		MaterialPropertyBlock _propBlock;
-		/// <summary>
-		/// The wind vector affecting this instance.
-		/// </summary>
-		Vector4 wind = Vector4.zero;
-		/// <summary>
-		/// True to preview wind on the editor when requested.
-		/// </summary>
-		[HideInInspector]
-		public bool editorWindEnabled = false;
-		public enum WindType {
-			None,
-			TreeCreator,
-			ST7,
-			ST8
-		}
-		public WindType windType = WindType.None;
-		public enum WindQuality {
-			None,
-			Fastest,
-			Fast,
-			Better,
-			Best,
-			Palm
-		}
-		public WindQuality windQuality = WindQuality.Better;
-		private float baseWindAmplitude = 0.2752f;
-		public float localWindAmplitude = 1f;
-		public static float globalWindAmplitude = 1f;
-		public float windMain = 0f;
-		#endregion
+    /// <summary>
+    /// Controls a Tree Broccoli Instances.
+    /// </summary>
+    [ExecuteInEditMode]
+    public class BroccoTreeController_1_2_5 : MonoBehaviour {
+        #region Vars
+        /// <summary>
+        /// Version of Broccoli Tree Creator issuing this controller.
+        /// </summary>
+        public string version = "";
+        /// <summary>
+        /// Type of shaders available.
+        /// </summary>
+        public enum ShaderType {
+            Standard,
+            TreeCreatorOrCompatible,
+            SpeedTree7OrCompatible,
+            SpeedTree8OrCompatible,
+            Billboard
+        }
+        /// <summary>
+        /// Type of shader used to process this instance.
+        /// </summary>
+        public ShaderType shaderType = ShaderType.Standard;
+        /// <summary>
+        /// True if this instance has wind data based on SpeedTree.
+        /// </summary>
+        private bool hasSpeedTreeWind {
+            get { return shaderType == ShaderType.SpeedTree7OrCompatible || shaderType == ShaderType.SpeedTree8OrCompatible; }
+        }
+        /// <summary>
+        /// True if this instance has wind data based on Unity Tree Creator.
+        /// </summary>
+        private bool hasTreeCreatorWind {
+            get { return shaderType == ShaderType.TreeCreatorOrCompatible; }
+        }
+        /// <summary>
+        /// True to preview wind on the editor at all times.
+        /// </summary>
+        [HideInInspector]
+        public bool editorWindAlways = false;
+        /// <summary>
+        /// The renderer of the tree.
+        /// </summary>
+        Renderer _renderer;
+        /// <summary>
+        /// Material property block to set shader values.
+        /// </summary>
+        MaterialPropertyBlock _propBlock;
+        /// <summary>
+        /// The wind vector affecting this instance.
+        /// </summary>
+        Vector4 wind = Vector4.zero;
+        /// <summary>
+        /// True to preview wind on the editor when requested.
+        /// </summary>
+        [HideInInspector]
+        public bool editorWindEnabled = false;
+        public enum WindType {
+            None,
+            TreeCreator,
+            ST7,
+            ST8
+        }
+        public WindType windType = WindType.None;
+        public enum WindQuality {
+            None,
+            Fastest,
+            Fast,
+            Better,
+            Best,
+            Palm
+        }
+        public WindQuality windQuality = WindQuality.Better;
+        private float baseWindAmplitude = 0.2752f;
+        public float localWindAmplitude = 1f;
+        public static float globalWindAmplitude = 1f;
+        public float windMain = 0f;
+        #endregion
 
-		#region Shader values
-		float valueTime = 0f;
-		Vector4 valueWindDirection = Vector4.zero;
-		Vector4 valueSTWindVector = Vector4.zero;
-		Vector4 valueSTWindGlobal = Vector4.zero;
-		Vector4 valueSTWindBranch = Vector4.zero;
-		Vector4 valueSTWindBranchTwitch = Vector4.zero;
-		Vector4 valueSTWindBranchWhip = Vector4.zero;
-		Vector4 valueSTWindBranchAnchor = Vector4.zero;
-		Vector4 valueSTWindBranchAdherences = Vector4.zero;
-		Vector4 valueSTWindTurbulences = Vector4.zero;
-		Vector4 valueSTWindLeaf1Ripple = Vector4.zero;
-		Vector4 valueSTWindLeaf1Tumble = Vector4.zero;
-		Vector4 valueSTWindLeaf1Twitch = Vector4.zero;
-		Vector4 valueSTWindLeaf2Ripple = Vector4.zero;
-		Vector4 valueSTWindLeaf2Tumble = Vector4.zero;
-		Vector4 valueSTWindLeaf2Twitch = Vector4.zero;
-		Vector4 valueSTWindFrondRipple = Vector4.zero;
-		#endregion
+        #region Shader values
+        float valueTime = 0f;
+        Vector4 valueWindDirection = Vector4.zero;
+        Vector4 valueSTWindVector = Vector4.zero;
+        Vector4 valueSTWindGlobal = Vector4.zero;
+        Vector4 valueSTWindBranch = Vector4.zero;
+        Vector4 valueSTWindBranchTwitch = Vector4.zero;
+        Vector4 valueSTWindBranchWhip = Vector4.zero;
+        Vector4 valueSTWindBranchAnchor = Vector4.zero;
+        Vector4 valueSTWindBranchAdherences = Vector4.zero;
+        Vector4 valueSTWindTurbulences = Vector4.zero;
+        Vector4 valueSTWindLeaf1Ripple = Vector4.zero;
+        Vector4 valueSTWindLeaf1Tumble = Vector4.zero;
+        Vector4 valueSTWindLeaf1Twitch = Vector4.zero;
+        Vector4 valueSTWindLeaf2Ripple = Vector4.zero;
+        Vector4 valueSTWindLeaf2Tumble = Vector4.zero;
+        Vector4 valueSTWindLeaf2Twitch = Vector4.zero;
+        Vector4 valueSTWindFrondRipple = Vector4.zero;
+        #endregion
 
-		#region Shader Property Ids
-		static int propWindEnabled = 0;
-		static int propWindQuality = 0;
-		static int propSTWindVector = 0;
-		static int propSTWindGlobal = 0;
-		static int propSTWindBranch = 0;
-		static int propSTWindBranchTwitch = 0;
-		static int propSTWindBranchWhip = 0;
-		static int propSTWindBranchAnchor = 0;
-		static int propSTWindBranchAdherences = 0;
-		static int propSTWindTurbulences = 0;
-		static int propSTWindLeaf1Ripple = 0;
-		static int propSTWindLeaf1Tumble = 0;
-		static int propSTWindLeaf1Twitch = 0;
-		static int propSTWindLeaf2Ripple = 0;
-		static int propSTWindLeaf2Tumble = 0;
-		static int propSTWindLeaf2Twitch = 0;
-		static int propSTWindFrondRipple = 0;
-		#endregion
+        #region Shader Property Ids
+        static int propWindEnabled = 0;
+        static int propWindQuality = 0;
+        static int propSTWindVector = 0;
+        static int propSTWindGlobal = 0;
+        static int propSTWindBranch = 0;
+        static int propSTWindBranchTwitch = 0;
+        static int propSTWindBranchWhip = 0;
+        static int propSTWindBranchAnchor = 0;
+        static int propSTWindBranchAdherences = 0;
+        static int propSTWindTurbulences = 0;
+        static int propSTWindLeaf1Ripple = 0;
+        static int propSTWindLeaf1Tumble = 0;
+        static int propSTWindLeaf1Twitch = 0;
+        static int propSTWindLeaf2Ripple = 0;
+        static int propSTWindLeaf2Tumble = 0;
+        static int propSTWindLeaf2Twitch = 0;
+        static int propSTWindFrondRipple = 0;
+        #endregion
 
-		#region Static Constructor
-		#if UNITY_2017_2_OR_NEWER
-		static BroccoTreeController_1_2_5 () {
+        #region Static Constructor
+#if UNITY_2017_2_OR_NEWER
+        static BroccoTreeController_1_2_5() {
+            propWindEnabled = Shader.PropertyToID("_WindEnabled");
+            propWindQuality = Shader.PropertyToID("_WindQuality");
+            propSTWindVector = Shader.PropertyToID("_ST_WindVector");
+            propSTWindVector = Shader.PropertyToID("_ST_WindVector");
+            propSTWindGlobal = Shader.PropertyToID("_ST_WindGlobal");
+            propSTWindBranch = Shader.PropertyToID("_ST_WindBranch");
+            propSTWindBranchTwitch = Shader.PropertyToID("_ST_WindBranchTwitch");
+            propSTWindBranchWhip = Shader.PropertyToID("_ST_WindBranchWhip");
+            propSTWindBranchAnchor = Shader.PropertyToID("_ST_WindBranchAnchor");
+            propSTWindBranchAdherences = Shader.PropertyToID("_ST_WindBranchAdherences");
+            propSTWindTurbulences = Shader.PropertyToID("_ST_WindTurbulences");
+            propSTWindLeaf1Ripple = Shader.PropertyToID("_ST_WindLeaf1Ripple");
+            propSTWindLeaf1Tumble = Shader.PropertyToID("_ST_WindLeaf1Tumble");
+            propSTWindLeaf1Twitch = Shader.PropertyToID("_ST_WindLeaf1Twitch");
+            propSTWindLeaf2Ripple = Shader.PropertyToID("_ST_WindLeaf2Ripple");
+            propSTWindLeaf2Tumble = Shader.PropertyToID("_ST_WindLeaf2Tumble");
+            propSTWindLeaf2Twitch = Shader.PropertyToID("_ST_WindLeaf2Twitch");
+            propSTWindFrondRipple = Shader.PropertyToID("_ST_WindFrondRipple");
+        }
+#endif
+        #endregion
+
+        #region Events
+        public void Awake() {
+#if !UNITY_2017_2_OR_NEWER
 			propWindEnabled = Shader.PropertyToID ("_WindEnabled");
 			propWindQuality = Shader.PropertyToID ("_WindQuality");
 			propSTWindVector = Shader.PropertyToID ("_ST_WindVector");
@@ -145,63 +170,41 @@ namespace Broccoli.Controller {
 			propSTWindLeaf2Tumble = Shader.PropertyToID ("_ST_WindLeaf2Tumble");
 			propSTWindLeaf2Twitch = Shader.PropertyToID ("_ST_WindLeaf2Twitch");
 			propSTWindFrondRipple = Shader.PropertyToID ("_ST_WindFrondRipple");
-		}
-		#endif
-		#endregion
-
-		#region Events
-		public void Awake () {
-			#if !UNITY_2017_2_OR_NEWER
-			propWindEnabled = Shader.PropertyToID ("_WindEnabled");
-			propWindQuality = Shader.PropertyToID ("_WindQuality");
-			propSTWindVector = Shader.PropertyToID ("_ST_WindVector");
-			propSTWindVector = Shader.PropertyToID ("_ST_WindVector");
-			propSTWindGlobal = Shader.PropertyToID ("_ST_WindGlobal");
-			propSTWindBranch = Shader.PropertyToID ("_ST_WindBranch");
-			propSTWindBranchTwitch = Shader.PropertyToID ("_ST_WindBranchTwitch");
-			propSTWindBranchWhip = Shader.PropertyToID ("_ST_WindBranchWhip");
-			propSTWindBranchAnchor = Shader.PropertyToID ("_ST_WindBranchAnchor");
-			propSTWindBranchAdherences = Shader.PropertyToID ("_ST_WindBranchAdherences");
-			propSTWindTurbulences = Shader.PropertyToID ("_ST_WindTurbulences");
-			propSTWindLeaf1Ripple = Shader.PropertyToID ("_ST_WindLeaf1Ripple");
-			propSTWindLeaf1Tumble = Shader.PropertyToID ("_ST_WindLeaf1Tumble");
-			propSTWindLeaf1Twitch = Shader.PropertyToID ("_ST_WindLeaf1Twitch");
-			propSTWindLeaf2Ripple = Shader.PropertyToID ("_ST_WindLeaf2Ripple");
-			propSTWindLeaf2Tumble = Shader.PropertyToID ("_ST_WindLeaf2Tumble");
-			propSTWindLeaf2Twitch = Shader.PropertyToID ("_ST_WindLeaf2Twitch");
-			propSTWindFrondRipple = Shader.PropertyToID ("_ST_WindFrondRipple");
-			#endif
-		}
-		/// <summary>
-		/// Start this instance.
-		/// </summary>
-		public void Start () {
-			// Get renderer component.
-			_renderer = GetComponent<Renderer> ();
-			if (_renderer != null && shaderType != ShaderType.Standard) {
-				_propBlock = new MaterialPropertyBlock ();
-				_renderer.GetPropertyBlock (_propBlock);
+#endif
+        }
+        /// <summary>
+        /// Start this instance.
+        /// </summary>
+        public void Start() {
+            // Get renderer component.
+            _renderer = GetComponent<Renderer>();
+            if (_renderer != null && shaderType != ShaderType.Standard) {
+                _propBlock = new MaterialPropertyBlock();
+                _renderer.GetPropertyBlock(_propBlock);
+                if (hasSpeedTreeWind) {
+                    SetupSpeedTreeWind();
+                } else if (hasTreeCreatorWind) {
+                    SetupTreeCreatorWind();
+                }
+            }
+            //localWindAmplitude = 0.6f;
+            //windMain = 0.2f;
+            //windQuality = WindQuality.Palm;
+        }
+        /// <summary>
+        /// Update this instance.
+        /// </summary>
+        void Update() {
+            if (_renderer != null && _renderer.isVisible) {
+#if UNITY_EDITOR
+                if (hasSpeedTreeWind && EditorApplication.isPlaying) {
+#else
 				if (hasSpeedTreeWind) {
-					SetupSpeedTreeWind ();
-				} else if (hasTreeCreatorWind) {
-					SetupTreeCreatorWind ();
-				}
-			}
-		}
-		/// <summary>
-		/// Update this instance.
-		/// </summary>
-		void Update () {
-			if (_renderer != null && _renderer.isVisible) {
-				#if UNITY_EDITOR
-				if (hasSpeedTreeWind && EditorApplication.isPlaying) {
-				#else
-				if (hasSpeedTreeWind) {
-				#endif
-					UpdateSpeedTreeWind ();
-				}
-			}
-		}
+#endif
+                    UpdateSpeedTreeWind();
+                }
+            }
+        }
 		void EditorUpdate () {
 			#if UNITY_EDITOR
 			if (editorWindEnabled && hasSpeedTreeWind && !EditorApplication.isPlaying) {
