@@ -247,7 +247,7 @@ namespace StarterAssets
                 _input.TransformPlayer = false;
                 //_animator.SetBool("TransformCombat", true);
                 Invoke("OniModeController", 0.85f);
-                _enemyController.FearActive();
+                //_enemyController.FearActive(); //activar para que se mueva el enemigo
                 KatanaController();
                 if(!Combat)
                 {
